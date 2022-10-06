@@ -2,16 +2,12 @@
 
 include 'connect.php';
 if(isset($_POST['submit'])){
-   $location=$_POST['location'];
-   $matchcount=$_POST['matchcount'];
-   $timetaken=$_POST['timetaken'];
-   $milestravelled=$_POST['milestravelled'];
-   $fuelused=$_POST['fuelused'];
-   $numbervehicles=$_POST['numbervehicles'];
-   $registrationid=$_POST['registrationid'];
+   $Name=$_POST['Name'];
+   $DateOfJoining=$_POST['DateOfJoining'];
+   $Department=$_POST['Department'];
+   $Years=$_POST['Years'];
 
-
-   $sql="insert into `information` (location,matchcount,timetaken,milestravelled,fuelused,numbervehicles,registrationid) values('$location','$matchcount','$timetaken','$milestravelled','$fuelused','$numbervehicles','$registrationid')";
+   $sql="insert into `information` (Name,DateOfJoining,Department,Years) values('$Name','$DateOfJoining','$Department','$Years')";
    $result=mysqli_query($con,$sql);
    if($result){
       header('location:display.php');
